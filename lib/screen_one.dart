@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:practise_routing/screen_three.dart';
+import 'package:practise_routing/utils/routes_name.dart';
 
 class ScreenOne extends StatefulWidget {
-  static const id = 'screen_one';
-  const ScreenOne({Key? key}) : super(key: key);
+  dynamic data;
+  // static const id = 'screen_one';
+  ScreenOne({Key? key, required this.data}) : super(key: key);
 
   @override
   State<ScreenOne> createState() => _ScreenOneState();
@@ -22,13 +23,20 @@ class _ScreenOneState extends State<ScreenOne> {
         children: [
           InkWell(
             onTap: (() {
-              Navigator.pushNamed(context, ScreenThree.id);
+              Navigator.pushNamed(context, RoutesName.screenThree);
+              // Navigator.pushNamed(context, ScreenThree.id);
             }),
-            child: Container(
-              height: 50,
-              width: double.infinity,
-              color: Colors.green,
-              child: const Center(child: Text('Screen Two')),
+            child: Column(
+              children: [
+                Text(widget.data['Name']),
+                Text(widget.data['subject']),
+                Container(
+                  height: 50,
+                  width: double.infinity,
+                  color: Colors.green,
+                  child: const Center(child: Text('Screen Two')),
+                ),
+              ],
             ),
           )
         ],

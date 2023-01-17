@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practise_routing/home_screen.dart';
 
 class ScreenThree extends StatefulWidget {
-  static const id = 'screen_three';
+  // static const id = 'screen_three';
   const ScreenThree({Key? key}) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class _ScreenThreeState extends State<ScreenThree> {
         children: [
           InkWell(
             onTap: (() {
-              Navigator.pushNamed(context, HomeScreen.id);
+              // Navigator.pushNamed(context, HomeScreen.id);
             }),
             child: Container(
               height: 50,

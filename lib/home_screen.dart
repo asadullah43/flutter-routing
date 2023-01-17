@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:practise_routing/screen_one.dart';
+
+import 'package:practise_routing/utils/routes_name.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const id = 'home_screen';
+  // static const id = 'home_screen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -24,7 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             InkWell(
               onTap: (() {
-                Navigator.pushNamed(context, ScreenOne.id);
+                Navigator.pushNamed(context, RoutesName.screenOne,
+                    arguments: {'Name': "Asad", 'subject': "Flutter"});
+                // Navigator.pushNamed(context, ScreenOne.id);
               }),
               child: Container(
                 height: 50,
